@@ -33,12 +33,61 @@
                 <input type="button" value="Verificar" onclick="descrever()">
             </p>
         </div>
-        <div id="img">
-            
+        <div id="resultado">
+            <div id="descricao">
+
+            </div>
+            <div id="img">
+
+            </div>
         </div>
     </section>
     <footer>
         <p><em>@JoaoArthur</em></p>
     </footer>
+    <script>
+        function descrever() {
+            var dataAtual = new Date()
+            var anoAtual = ano.getFullYear()
+            var anoUsuario = window.document.querySelector('input#anoNascimento')
+            var idadeUsuario = anoAtual - anoUsuario
+            var sexoUsuario = window.document.getElementsByName('sexo')
+            var descricao = window.document.querySelector('div#descricao') 
+            var img = window.document.querySelector('div#img')
+            
+            switch (sexo) {
+                case M: 
+                    if (idade <= 18) {
+                        sexoUsuario = 'um Jovem'
+                        img = 'url(imagens/menino.jpg)'
+                    } else if (idade < 60) {
+                        sexoUsuario = 'um Homem'
+                        img = 'url(imagens/homem.jpg)'
+                    } else {
+                        sexoUsuario = 'um Idoso'
+                        img = 'url(imagens/idoso.jpg)'
+                    }
+                    break
+
+                case F: 
+                    if (idade <= 18) {
+                        sexoUsuario = 'uma Jovem'
+                        img = 'url(imagens/menina.jpg)'
+                    } else if (idade < 60) {
+                        sexoUsuario = 'uma Mulher'
+                        img = 'url(imagens/mulher.jpg)'
+                    } else {
+                        sexoUsuario = 'uma Idosa'
+                        img = 'url(imagens/idosa.jpg)'
+                    }
+                    break
+
+                default: 
+                    descricao.innerHTML = '[ERRO] <br> veja se os dados foram preenchidos corretamente'
+                    break
+            }
+            descricao.innerHTML = `Detectamos ${sexoUsuario} de ${idadeUsuario} anos`
+        }
+    </script>
 </body>
 </html>

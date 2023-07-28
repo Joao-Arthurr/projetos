@@ -1,0 +1,38 @@
+@charset "UTF-8";
+
+* {
+    text-align: center;
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+body, html {
+    color: white;     
+}
+
+section#container {
+    width: 300px;
+    height: 400px;
+    margin: auto;
+    background-color: white;
+    color: black;
+    text-align: center;
+    padding: 10px;
+    border-radius: 20px;
+    box-shadow: 0px 0px 15px rgba(0, 0, 0, 0.402);
+}
+
+div#img {
+    width: 250px;
+    height: 250px;
+    border-radius: 50%;
+    border: 1px solid black;
+    margin: auto;
+    background: black no-repeat center center;
+    background-size: cover;
+
+
+}
+
+footer {
+    font-weight: bold;
+}

@@ -14,14 +14,14 @@ html, body {
 }
 
 header {
-    padding: 20px;
+    padding: 30px;
 }
 
 section {
     display: block;
     margin: auto;
-    width: 350px;
-    height: 500px;
+    max-width: 400px;
+    height: auto;
     padding: 15px;
     background-color: white;
     color: black;
@@ -30,7 +30,8 @@ section {
 }
 
 div#formulario > p {
-    padding-bottom: 15px;
+    font-size: 1em;
+    padding-bottom: 20px;
     text-align: left; 
 }
 
@@ -43,6 +44,20 @@ div#formulario > p > label {
     padding-right: 10px;
 }
 
+div#formulario > p#verificar {
+    text-align: center;
+}
+
+p#verificar > input {
+    font-weight: bold;
+    font-size: 1em;
+    border-radius: 25px;
+    border: none;
+    background-color: lightgreen;
+    padding: 8px 30px;
+}
+
 footer {
+    padding: 10px;
     font-weight: bold;
 }

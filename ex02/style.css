@@ -50,25 +50,6 @@ div#formulario > p#verificar {
     text-align: center;
 }
 
-div#resultado {
-    height: 200px;
-    background-color: aquamarine;
-}
-
-div#descricao {
-    background-color: blueviolet;
-    width: auto;
-    height: auto;
-    color: black;
-}
-
-div#img {
-    border-radius: 50%;
-    color: black;
-    margin: auto;
-    background: b;
-}
-
 p#verificar > input {
     font-weight: bold;
     border-radius: 25px;

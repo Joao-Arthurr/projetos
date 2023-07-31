@@ -1,2 +1,33 @@
 @charset "UTF-8";
 
+@media screen and (min-width: 768px) {
+    header {
+        font-size: 1.8em;
+    }
+
+    section {
+        max-width: 700px;
+    }
+
+    strong {
+        font-size: 1.2em;
+    }
+
+    label {
+        font-size: 1.2em;
+    }
+
+    p#verificar > input {
+        font-size: 1.2em;
+    }
+
+    p#verificar > input:hover {
+        border: 1px solid rgba(0, 0, 0, 0.368);
+        background-color: rgb(94, 195, 94);
+    }
+    
+    p#verificar > input:active {
+        background-color: rgb(94, 195, 94);
+    }
+    
+}

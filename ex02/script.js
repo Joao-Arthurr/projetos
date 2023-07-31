@@ -1,35 +1,43 @@
 function descrever() {
     var dataAtual = new Date()
-    var anoAtual = ano.getFullYear()
+    var anoAtual = dataAtual.getFullYear()
     var anoUsuario = window.document.querySelector('input#anoNascimento')
-    var genero = ''
+    var res = window.document.querySelector('div#resultado')
     var idadeUsuario = anoAtual - Number(anoUsuario.value)
     var sexoUsuario = window.document.getElementsByName('sexo')
-    var res = window.document.querySelector('div#resultado')
-    var img = window.document.querySelector('div#img')
+    var genero = ''
+    var img = window.document.createElement('img')
+    img.setAttribute('id', 'foto')
     
-        if (sexoUsuario[0].checked){
-            if (idade <= 18) {
-                genero += '<p>um Jovem</p>'
-                img = 'url(imagens/menino.jpg)'
-            } else if (idade < 60) {
-                genero += '<p>um Homem</p>'
-                img = 'url(imagens/homem.jpg)'
-            } else {
-                genero += '<p>um Idoso</p>'
-                img = 'url(imagens/idoso.jpg)'
-            }
-        } else if (genero[1].checked){
-            if (idade <= 18) {
-                genero += '<p>uma Jovem</p>'
-                img = 'url(imagens/menina.jpg)'
-            } else if (idade < 60) {
-                genero += '<p>uma Mulher</p>'
-                img = 'url(imagens/mulher.jpg)'
-            } else {
-                genero += '<p>uma Idosa</p>'
-                img = 'url(imagens/idosa.jpg)'
-            }
+    if (sexoUsuario[0].checked) {
+        if (idadeUsuario <= 12) {
+            img.setAttribute('src', 'imagens/crianca-m.png')
+            genero = 'uma criança'
+        } else if (idadeUsuario <= 18) {
+            img.setAttribute('src', 'imagens/menino.png')
+            genero = 'um jovem'
+        } else if (idadeUsuario < 50) {
+            img.setAttribute('src', 'imagens/homem.png')
+            genero = 'um homem'
+        } else {
+            img.setAttribute('src', 'imagens/idoso.png')
+            genero = 'um idoso'
         }
-    res.innerHTML = `Detectamos ${sexoUsuario} de ${idadeUsuario} anos`
+    } else {
+        if (idadeUsuario <= 12) {
+            img.setAttribute('src', 'imagens/crianca-f.png')
+            genero = 'uma criança'
+        } else if (idadeUsuario <= 18) {
+            img.setAttribute('src', 'imagens/menina.png')
+            genero = 'uma menina'
+        } else if (idadeUsuario < 50) {
+            img.setAttribute('src', 'imagens/mulher.png')
+            genero = 'uma mulher'
+        } else {
+            img.setAttribute('src', 'imagens/idosa.png')
+            genero = 'uma idosa'
+        }
+    }
+    res.innerHTML = `Detectamos ${genero} com ${idadeUsuario} anos`
+    res.appendChild(img)
 }

@@ -7,9 +7,8 @@ function contar() {
         window.alert('Passo inválido, sera considerado o valor "1"')
         passo = '1'
     }
-    res.innerHTML = `${passo}`
-    while (Number(valorInc.value) <= Number(valorFim.value)){
-        res.innerHTML += `${valorInc}`      
-        Number(valorInc.value) += Number(passo.value)
+    res.innerHTML = 'Contando: <br>'
+    for (valorInc.value; valorInc.value < valorFim.value; valorInc.value += passo.value) {
+        res.innerHTML = `${valorInc.value}`
     }
 }

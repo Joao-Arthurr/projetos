@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Site</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <header>
+        <h1>Verificador de Números</h1>
+    </header>
+    <section>
+        <div>
+            <p>
+                <label for="txtnum">Número: </label>
+                <input type="number" name="txtnum" id="txtnum" placeholder="1 a 100" min="0" max="100">
+                <input id="b1" type="button" value="Adicionar" onclick="adicionarNumero()">
+            </p>
+            <select name="lista" id="lista" size="10" style="width: 250px;">
+                
+            </select>
+            <p style="text-align: center;">
+                <input id="b2" type="button" value="Finalizar" onclick="analisar()">
+                <input id="b3" type="button" value="Limpar"
+                onclick="limpar()">
+            </p>
+        </div>
+        <div id="res">
+
+        </div>
+    </section>
+    <footer>
+        <p> &copy; <em>JoaoArthur</em></p>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+</html>

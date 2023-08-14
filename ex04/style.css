@@ -11,6 +11,7 @@
 html, body {
     background-color: lightseagreen;
     text-align: center;
+    color: white;
 }
 
 header {
@@ -19,6 +20,7 @@ header {
 
 section {
     background-color: white;
+    color: black;
     height: auto;
     max-width: 400px;
     margin: auto;

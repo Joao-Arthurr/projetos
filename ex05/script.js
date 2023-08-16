@@ -29,37 +29,40 @@ function adicionarNumero() {
         valores.push(novoNummero) // Adiciona o novo número ao array 'valores'
         var item = document.createElement('option')
         item.text = `Valor ${novoNummero} Adicioado`
-        item.value = `n${valores.length}`
-
         listaNum.appendChild(item) // Adiciona o novo item na lista
+        res.innerHTML = ''
     } else {
         alert('Valor inválido ou já encontrado na lista')
     }
     num.value = '' // Limpa o campo de entrada
+    num.focus() // Coloca foco no input, não precisando clicar para escrever
 }
 
-function analisar(){
-    res.innerHTML = ''
-    valores.sort() // Coloca o array 'valores' em ordem crescente
-    var totalNumeros = 0 
-    var somaValores = 0
-    var soma = Number(somaValores.valueOf)
-    while(totalNumeros < valores.length){
-        totalNumeros++
-    }
-    
+function analisar() {
     if (valores.length == 0){
         alert('Por favor adicione um número à lista acima')
     } else {
-        res.innerHTML += `Foram adicionados ${totalNumeros} números na lista <br>`
-        res.innerHTML += ` O menor valor adicionado foi ${valores[0]} <br>`
-        res.innerHTML += `O maior valor adicionado foi ${valores.indexOf(totalNumeros)}<br>`
-
-        for(var cont = 0; cont <= totalNumeros; cont++){
-            soma += valores[cont.valueOf]
+        valores.sort() // Coloca o array 'valores' em ordem crescente
+        var totalNumeros = valores.length 
+        var maior = valores[0]
+        var menor = valores[0]
+        var soma = 0
+        var media = 0
+        for (var pos in valores) {
+            soma += valores[pos]
+            if(valores[pos] > maior){
+                maior = valores[pos]
+            } else if(valores[pos] < menor) {
+                menor = valores[pos]
+            }
         }
-
-        res.innerHTML += `A soma dos valores adicionados é ${soma}`
+        media = soma/totalNumeros
+        res.innerHTML = ''
+        res.innerHTML += `<p>Foram adicionados ${totalNumeros} números na lista</p> `
+        res.innerHTML += ` <p>O menor valor adicionado foi ${menor} </p>`
+        res.innerHTML += `<p>O maior valor adicionado foi ${maior}</p>`
+        res.innerHTML += `<p>A soma dos valores adicionados é ${soma}</p>`
+        res.innerHTML += `<p>A media entre todos os valores é ${media}</p>`
     }
 }
 
